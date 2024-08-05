@@ -41,7 +41,7 @@ class ATM {
     private BankAccount bankAccount;
 
     public ATM(BankAccount bankAccount) {
-        this.bankAccount = bankAccount; // Correct the constructor syntax
+        this.bankAccount = bankAccount; 
     }
 
     public void displayMenu() {
@@ -56,36 +56,36 @@ class ATM {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             displayMenu();
-            System.out.print("Enter your choice: "); // Fixed to use print
+            System.out.print("Enter your choice: "); 
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1: {
                     System.out.println("Current balance: Rs." + bankAccount.getBalance()); // Added Rs. to balance
-                    break; // Add break statement to prevent fall-through
+                    break; 
                 }
                 case 2: {
-                    System.out.print("Enter the amount to deposit: "); // Fixed to use print
+                    System.out.print("Enter the amount to deposit: "); 
                     double depositAmount = scanner.nextDouble();
                     bankAccount.deposit(depositAmount);
                     break; // Add break statement
                 }
                 case 3: {
-                    System.out.print("Enter the withdrawal amount: "); // Fixed to use print
+                    System.out.print("Enter the withdrawal amount: "); 
                     double withdrawalAmount = scanner.nextDouble();
                     boolean withdrawSuccess = bankAccount.withdraw(withdrawalAmount);
                     if (withdrawSuccess) {
                         System.out.println("Withdraw successful");
                     }
-                    break; // Add break statement
+                    break; 
                 }
                 case 4: {
                     System.out.println("THANK YOU FOR USING THE ATM!");
-                    scanner.close(); // Close scanner
-                    return; // Exit the loop
+                    scanner.close();
+                    return; 
                 }
                 default: {
                     System.out.println("Invalid Choice. Please try again!");
-                    break; // Add break statement
+                    break; 
                 }
             }
         }
@@ -94,7 +94,7 @@ class ATM {
 
 public class atm_interface {
     public static void main(String[] args) {
-        BankAccount userAccount = new BankAccount(1000.0); // Corrected class name
+        BankAccount userAccount = new BankAccount(1000.0); 
         ATM atm = new ATM(userAccount);
         atm.run();
     }
